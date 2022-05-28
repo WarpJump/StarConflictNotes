@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Калькулятор энергии</title>
+	<link rel="icon"	href="images/32px.png" type="image">
+	<link rel="stylesheet" href="style.css">
+    
+    <script src= "script.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div class="main">
+        <header> <h1>Калькулятор энергии</h1> </header>
+            <header>
+                <h2>Можно посчитать сколько времени будет заряжаться до определённого заряда и значение коэффициента регенерации при 10%, 20%, -100% и 500% заряда энергоблока</h2>
+                <script></script>
+                <noscript style="color: red; font-size: xx-large;">Для работы калькулятора необходим браузер, поддерживающий javascript. Если вы видите это сообщение, значит он не работает</noscript>
+            </header>
+            
+            <div class="producing-calculator">
+                <div class="main-unit" >
+                    <div class="left_block" style="width:60%; height: 100%">
+                        <!-- Если функция выглядит как Гаусс и подгоняется как Гаусс, то это Гаусс -->
+                        <iframe src="images/graph.jpg"></iframe>
+                    </div>
+
+                    <div class="right_block" style="width:38%">
+                        <!-- Реген, ня -->
+                        <h2>Регенерация</h2>
+                        <div class="left_block" style="text-align: left; width:45%">
+                            <h3>Текущий уровень энергии, в процентах от максимума (можно вводить конченые числа)</h3>
+                            <input id="energy_level">
+                            <button onclick="Regeneration_Level();">Посчитать</button>
+                        </div>
+
+                        <div class="right_block" style="text-align: left; width:45%">
+                            <h3>Коэффициент регенерации (максимален при 33.02%)</h3>
+                            <p id="answer">Коэффициент</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="time-calculator" >
+                <div class="main-unit" style="height: 300">
+                    <div class="left_block" style="width:35%">
+                        <h3>Полный запас энергии, единиц</h3>
+                        <input id="Full_Energy">
+                        <h3>Максимальная регенерация энергии, единиц в секунду</h3>
+                        <input id="P">
+                    </div>
+
+                    <div class="central_block" style="width:35%">
+                        <h3>Начальный уровень энергии, то есть момент с которого начинается регенерация</h3>
+                        <input id="Start_Energy">
+                        <h3>Конечный уровень энергии, до которого считается время регенерации. Может быть меньше начального, но и ответ соответствующий :) </h3>
+                        <input id="End_Energy">
+                    </div>
+
+                    <div class="right_block" style="width:25%; border-left: 2px solid #BEBEBE">
+                        <h3>Посчитать время регенерации энергии</h3>
+                        <!-- Трёх точек мало для сколько-нибудь точного интегрирования на удалении от вершины функции Гаусса, но от -60% до 130% приемлимо -->
+                        <button onclick="Time_Calculation();">Посчитать</button>
+                        <p id="Time">Время в секундах</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3 style="color: #c1c1c1c1; font-size: larger;">Cult of Power [POWER], май 2022</h3>
+            <h3 style="float: left; color: #c1c1c1c1; font-size: medium; margin-left: 20px;">    По всем вопросам и предложениям (проме пойти нахрен): WarpJump#8341</h3>
+        </div>
+
+</body>
+</html>
